@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家庭做馒头简单做法-新手也能成功的松软馒头教程</title>
+    <meta name="description" content="家庭做馒头简单做法全攻略，从和面、发酵到整形蒸制，详细步骤图解，让您轻松在家做出又白又松软的好吃馒头。">
+    <meta name="keywords" content="家庭做馒头,馒头简单做法,馒头怎么做,发面技巧,蒸馒头方法">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #faf7f2;
+            color: #3a2e28;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 页眉 */
+        .site-header {
+            background-color: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            font-size: 32px;
+            background: linear-gradient(135deg, #f5a623, #e07b39);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(224,123,57,0.3);
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #c25b1a;
+            letter-spacing: 1px;
+        }
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+        .main-nav a {
+            text-decoration: none;
+            color: #5a4a3a;
+            font-weight: 500;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+            font-size: 0.98rem;
+        }
+        .main-nav a:hover {
+            color: #d2691e;
+            border-bottom-color: #d2691e;
+        }
+
+        /* 首屏 */
+        .hero {
+            background: linear-gradient(135deg, #fff7ed 0%, #fde8d6 100%);
+            padding: 48px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid #f0e0d0;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            color: #9b4a1e;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+        .hero-sub {
+            font-size: 1.15rem;
+            color: #7a5c48;
+            max-width: 700px;
+            margin: 0 auto 18px;
+        }
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .hero-tag {
+            background: #fff;
+            border-radius: 30px;
+            padding: 6px 18px;
+            font-size: 0.9rem;
+            color: #a85a2a;
+            border: 1px solid #e8c8a8;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        /* 快速导航卡片 */
+        .quick-guide {
+            padding: 40px 0 10px;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 28px;
+            color: #7c3e1a;
+            font-weight: 700;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #e07b39;
+            margin: 10px auto 0;
+            border-radius: 4px;
+        }
+        .steps-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .step-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 24px 18px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s;
+            border: 1px solid #f2e4d8;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+        }
+        .step-num {
+            background: #f5a623;
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        .step-card h3 {
+            color: #5a3a20;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        .step-card p {
+            font-size: 0.92rem;
+            color: #7a6a5a;
+        }
+
+        /* 详细做法区域 */
+        .detail-section {
+            padding: 30px 0 40px;
+        }
+        .recipe-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 36px 32px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+            margin-bottom: 28px;
+            border-left: 6px solid #e07b39;
+        }
+        .recipe-card h2 {
+            font-size: 1.6rem;
+            color: #7c3e1a;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ingredient-list {
+            background: #fdf6ee;
+            padding: 18px 22px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .ingredient-list h3 {
+            font-size: 1.1rem;
+            color: #9b4a1e;
+            margin-bottom: 8px;
+        }
+        .ingredient-list ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 24px;
+        }
+        .ingredient-list li {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.95rem;
+        }
+        .ingredient-list li::before {
+            content: '·';
+            color: #e07b39;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        .step-list {
+            margin: 20px 0;
+        }
+        .step-list ol {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+        .step-list li {
+            counter-increment: step-counter;
+            margin-bottom: 18px;
+            padding-left: 48px;
+            position: relative;
+            font-size: 0.98rem;
+        }
+        .step-list li::before {
+            content: counter(step-counter);
+            background: #f5a623;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .tip-box {
+            background: #f0f8e8;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 16px 0;
+            border-left: 4px solid #8bc34a;
+            font-size: 0.95rem;
+        }
+        .warning-box {
+            background: #fff5f5;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 16px 0;
+            border-left: 4px solid #e57373;
+            font-size: 0.95rem;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            padding: 30px 0 50px;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border: 1px solid #f0e2d4;
+        }
+        .faq-item h3 {
+            color: #8b4513;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #5a4a3a;
+        }
+
+        /* 小贴士区域 */
+        .tips-section {
+            background: #fff;
+            border-radius: 24px;
+            padding: 36px;
+            margin: 30px 0 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+        }
+        .tips-section h2 {
+            color: #7c3e1a;
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+        }
+        .tips-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .tip-item {
+            background: #fdf6ee;
+            padding: 16px 18px;
+            border-radius: 12px;
+            border-left: 4px solid #f5a623;
+            font-size: 0.95rem;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #3a2e28;
+            color: #d8c8b8;
+            padding: 32px 0 20px;
+            margin-top: 20px;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .footer-col h4 {
+            color: #f5a623;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+        }
+        .footer-copy {
+            text-align: center;
+            font-size: 0.85rem;
+            border-top: 1px solid #5a4a3a;
+            padding-top: 16px;
+            color: #a09080;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .header-inner {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .main-nav ul {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .recipe-card {
+                padding: 24px 18px;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .step-list li {
+                padding-left: 42px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 14px;
+            }
+            .hero {
+                padding: 30px 0 24px;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .steps-overview {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .step-card {
+                padding: 16px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo-area">
+            <div class="logo-icon">🍞</div>
+            <span class="logo-text">家庭面点坊</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">基础发面</a></li>
+                <li><a href="#">花样馒头</a></li>
+                <li><a href="#">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- 首屏 -->
+    <section class="hero">
+        <div class="container">
+            <h1>家庭做馒头简单做法</h1>
+            <p class="hero-sub">掌握这几点，新手也能一次做出又白又松软的手工馒头，从和面到出锅全程无保留分享。</p>
+            <div class="hero-tags">
+                <span class="hero-tag">✅ 零基础教程</span>
+                <span class="hero-tag">⏱️ 耗时约2小时</span>
+                <span class="hero-tag">⭐ 成功率高</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 快速概览 -->
+    <section class="quick-guide">
+        <div class="container">
+            <h2 class="section-title">简单做法四步走</h2>
+            <div class="steps-overview">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h3>和面</h3>
+                    <p>面粉、酵母、温水按比例混合，揉成光滑面团</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h3>发酵</h3>
+                    <p>温暖处静置，面团发至两倍大，内部呈蜂窝状</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h3>整形</h3>
+                    <p>揉面排气，搓成长条，切成大小均匀的剂子</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <h3>蒸制</h3>
+                    <p>二次醒发后上锅蒸，关火焖几分钟再揭盖</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 详细做法 -->
+    <section class="detail-section">
+        <div class="container">
+            <h2 class="section-title">家常馒头详细做法</h2>
+            
+            <article class="recipe-card">
+                <h2>🍚 基础白馒头（最经典）</h2>
+                <div class="ingredient-list">
+                    <h3>食材清单</h3>
+                    <ul>
+                        <li>中筋面粉 500克</li>
+                        <li>干酵母 5克（约一小勺）</li>
+                        <li>温水 250-260毫升</li>
+                        <li>白糖 10克（促进发酵）</li>
+                        <li>食用油 10毫升（可选，更洁白）</li>
+                    </ul>
+                </div>
+                <div class="step-list">
+                    <ol>
+                        <li><strong>活化酵母：</strong>将干酵母和白糖放入温水中（水温以不烫手为宜，约30-35度），静置5分钟至表面出现细腻泡沫，说明酵母活性良好。</li>
+                        <li><strong>和面：</strong>将酵母水缓缓倒入面粉中，边倒边用筷子搅拌成絮状，再淋入食用油，用手揉成光滑面团。约揉10-15分钟，做到“面光、手光、盆光”。</li>
+                        <li><strong>第一次发酵：</strong>盖上湿布或保鲜膜，放在温暖处（28-35度最佳），发酵至面团体积变为原来的2倍大，用手指蘸面粉戳洞不回缩、不塌陷，内部呈蜂窝组织。</li>
+                        <li><strong>揉面排气：</strong>取出面团，在案板上撒少许干粉，用力揉压，将气体完全排出，这一步决定馒头内部组织是否细腻。大约揉8-10分钟，直到切开面团无明显大气孔。</li>
+                        <li><strong>整形：</strong>将面团搓成长条，用刀切成均匀的馒头坯，或者用手团成圆形。每个剂子约80-100克。</li>
+                        <li><strong>二次醒发：</strong>馒头坯放入蒸笼，盖上盖子，静置15-20分钟。二次醒发到位，馒头生坯明显变大一圈，拿起来手感轻飘飘的。</li>
+                        <li><strong>蒸制：</strong>冷水上锅，开大火，水开后转中火蒸15分钟（根据馒头大小调整）。关火后不要立刻开盖，焖3-5分钟再揭盖，防止馒头回缩塌陷。</li>
+                    </ol>
+                </div>
+                <div class="tip-box">
+                    💡 <strong>成功关键：</strong>面团一定要揉到位，发酵温度和时间要灵活掌握。夏天发酵快，冬天可借助烤箱发酵功能或放在温水锅上。
+                </div>
+            </article>
+
+            <article class="recipe-card">
+                <h2>🥛 奶香馒头（更松软）</h2>
+                <p>在基础配方上，将水替换为温牛奶（约260毫升），并增加20克奶粉，减少10克水。奶香浓郁，口感更细腻，尤其适合儿童和喜欢奶味的人群。</p>
+                <div class="step-list">
+                    <ol>
+                        <li>将牛奶加热至温热（不烫手），加入酵母和糖活化。</li>
+                        <li>与面粉、奶粉混合揉成面团，后续步骤与基础馒头一致。</li>
+                        <li>因为牛奶的加入，面团会稍粘，可适当增加10-20克面粉。</li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="recipe-card">
+                <h2>🌾 全麦馒头（健康版）</h2>
+                <p>用全麦面粉替代1/3到1/2的中筋面粉，口感更扎实，麦香浓郁。全麦面团发酵时间稍长，需多观察状态。</p>
+                <div class="warning-box">
+                    ⚠️ <strong>注意：</strong>全麦面粉吸水性更强，需要适当增加水量约10-15%，且揉面时间不宜过长，以免面筋断裂。
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 小贴士 -->
+    <section class="container">
+        <div class="tips-section">
+            <h2>📌 让馒头更好吃的实用技巧</h2>
+            <div class="tips-list">
+                <div class="tip-item">
+                    <strong>面粉选择：</strong>做馒头首选“中筋面粉”，蛋白质含量适中，筋度合适。高筋粉易回缩，低筋粉支撑力不足。
+                </div>
+                <div class="tip-item">
+                    <strong>水温控制：</strong>水温过高会烫死酵母，过低则发酵缓慢。最适温度为30-35度，手摸不烫不凉。
+                </div>
+                <div class="tip-item">
+                    <strong>加一点糖：</strong>少量白糖不是增加甜味，而是为酵母提供养分，让发酵更旺盛，馒头更松软。
+                </div>
+                <div class="tip-item">
+                    <strong>二次醒发别忽略：</strong>这是馒头蓬松的关键步骤，切莫心急直接上锅蒸。
+                </div>
+                <div class="tip-item">
+                    <strong>蒸好后焖一下：</strong>立刻开盖会让冷空气接触馒头表面，导致骤然回缩起皱。
+                </div>
+                <div class="tip-item">
+                    <strong>冷水上锅：</strong>冷水加热过程中，馒头生坯还能继续膨胀，比热水上锅效果更稳定。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">新手常见问题解答</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>为什么馒头蒸好后会塌陷回缩？</h3>
+                    <p>最常见的原因是关火后立刻开盖，冷热温差导致面皮收缩。另外揉面不足或发酵过度也可能导致支撑力不足。记得关火后焖3-5分钟再揭盖。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>面团发酵不起来是什么原因？</h3>
+                    <p>酵母失效、水温过高烫死酵母、环境温度太低都可能导致发酵失败。检查酵母是否在保质期内，用温水活化测试活性，并找一个温暖的地方发酵。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>馒头表面不光滑，坑坑洼洼？</h3>
+                    <p>主要是揉面排气不彻底。整形前一定要将面团中的气体完全揉出，切开面团截面应无明显气孔。每个剂子还要单独揉一下再整形。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>可以用自发粉做馒头吗？</h3>
+                    <p>可以。自发粉中已混入酵母和膨松剂，只需加水揉面，但依然需要醒发过程。注意自发粉的酵母活性可能不如新鲜酵母，建议严格按照说明操作。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>蒸馒头用冷水还是热水？</h3>
+                    <p>推荐冷水上锅。随着水温逐渐升高，馒头坯能均匀受热并继续膨胀，成品更松软。如果二次醒发已经非常充分，也可以水开后再上锅。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>剩下的馒头怎么保存？</h3>
+                    <p>完全放凉后装入保鲜袋密封，冷藏可保存2-3天，冷冻可保存1个月。吃之前重新蒸5-8分钟即可，口感几乎不变。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>🍞 家庭面点坊</h4>
+                <ul>
+                    <li>专注家庭面食教学</li>
+                    <li>简单·健康·美味</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门教程</h4>
+                <ul>
+                    <li>基础发面技巧</li>
+                    <li>花卷与包子做法</li>
+                    <li>杂粮馒头配方</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li>常见失败原因</li>
+                    <li>工具推荐</li>
+                    <li>食材选购指南</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2024 家庭面点坊 | 为喜欢在家做面食的你提供实用参考
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
