@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雅虎网站-回顾互联网先驱与门户网站的发展历程</title>
+    <meta name="description" content="了解雅虎网站的历史、核心服务、邮箱、新闻、财经、搜索等经典功能，回顾雅虎作为互联网门户先驱的兴衰历程与对现代互联网的影响。">
+    <meta name="keywords" content="雅虎,雅虎网站,Yahoo,雅虎邮箱,雅虎新闻,雅虎财经,门户网站,互联网历史">
+    <style>
+        /* 全局重置与基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: #4a00e0;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 页眉 */
+        .site-header {
+            background: linear-gradient(135deg, #5f0a87, #a4508b);
+            color: #fff;
+            padding: 20px 0;
+            border-bottom: 4px solid #ff0099;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .logo span {
+            font-size: 1rem;
+            font-weight: 300;
+            opacity: 0.9;
+            display: block;
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+        .main-nav {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: #fff;
+            font-weight: 500;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .main-nav a:hover {
+            border-bottom-color: #ffd700;
+            text-decoration: none;
+        }
+        .search-box {
+            display: flex;
+            margin-top: 10px;
+        }
+        .search-box input {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px 0 0 20px;
+            width: 220px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+        .search-box button {
+            background: #ff0099;
+            border: none;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 0 20px 20px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .search-box button:hover {
+            background: #cc0077;
+        }
+
+        /* 首屏 Hero */
+        .hero {
+            background: #2a0845;
+            background-image: radial-gradient(circle at 20% 30%, #6441a5, #2a0845);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        .hero .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .btn-primary {
+            background: #ff0099;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #cc0077;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            border-color: #fff;
+            color: #fff;
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            text-decoration: none;
+        }
+
+        /* 时间线/历史 */
+        .timeline-section {
+            padding: 60px 0;
+            background: #fff;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h3 {
+            font-size: 2rem;
+            color: #4a00e0;
+            font-weight: 700;
+        }
+        .section-title p {
+            color: #777;
+            margin-top: 10px;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 40px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #ff0099, #4a00e0);
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            background: #f8f9fa;
+            padding: 20px 25px;
+            border-radius: 8px;
+            border-left: 4px solid #ff0099;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ff0099;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px #ff0099;
+        }
+        .timeline-item .year {
+            font-weight: 700;
+            color: #4a00e0;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .timeline-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .timeline-item p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* 核心服务卡片 */
+        .services-section {
+            padding: 60px 0;
+            background: #f4f4f4;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .service-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-top-color: #ff0099;
+        }
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .service-card h4 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        .service-card .tag {
+            display: inline-block;
+            background: #f0e6ff;
+            color: #4a00e0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        /* 影响力板块 */
+        .impact-section {
+            padding: 60px 0;
+            background: #2a0845;
+            color: #fff;
+        }
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .impact-item {
+            background: rgba(255,255,255,0.08);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+        .impact-item h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+        .impact-item p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* FAQ 部分 */
+        .faq-section {
+            padding: 60px 0;
+            background: #fff;
+        }
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            border-left: 4px solid #4a00e0;
+        }
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #4a00e0;
+        }
+        .faq-item p {
+            color: #555;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #1a1a2e;
+            color: #aaa;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+        .footer-links a {
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+        .footer-links a:hover {
+            color: #ff0099;
+            text-decoration: none;
+        }
+        .footer-copyright {
+            font-size: 0.85rem;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .main-nav {
+                justify-content: center;
+                gap: 15px;
+            }
+            .search-box input {
+                width: 160px;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .timeline {
+                padding-left: 25px;
+            }
+            .timeline-item::before {
+                left: -23px;
+            }
+            .section-title h3 {
+                font-size: 1.6rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 0 15px;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 页眉 -->
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <h1>雅虎网站</h1>
+            <span>互联网门户时代的开创者与记忆</span>
+        </div>
+        <nav class="main-nav">
+            <a href="#history">历史回顾</a>
+            <a href="#services">核心服务</a>
+            <a href="#impact">行业影响</a>
+            <a href="#faq">常见问题</a>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索雅虎相关内容...">
+            <button type="button">搜索</button>
+        </div>
+    </div>
+</header>
+
+<!-- 首屏 Hero -->
+<section class="hero">
+    <div class="container">
+        <h2>还记得那个曾经的互联网入口吗？</h2>
+        <p>从人工编辑的网站目录到综合门户平台，雅虎见证并塑造了互联网的早期形态。今天，让我们重新审视这个曾经影响数亿用户的网络品牌。</p>
+        <div class="btn-group">
+            <a href="#history" class="btn btn-primary">探索雅虎编年史</a>
+            <a href="#services" class="btn btn-outline">查看经典服务</a>
+        </div>
+    </div>
+</section>
+
+<!-- 历史时间线 -->
+<section id="history" class="timeline-section">
+    <div class="container">
+        <div class="section-title">
+            <h3>雅虎大事记</h3>
+            <p>从斯坦福大学的业余爱好到全球互联网巨头</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="year">1994年</span>
+                <h4>诞生于斯坦福大学</h4>
+                <p>杨致远和大卫·费罗在斯坦福大学创建了"Jerry和David的万维网指南"，后更名为Yahoo!。最初只是一个互联网网站目录，靠人工编辑分类整理网址。</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">1996年</span>
+                <h4>纳斯达克上市</h4>
+                <p>雅虎于1996年4月在纳斯达克上市，股价首日即大幅上涨。作为早期互联网明星公司，雅虎开启了门户网站商业化的先河。</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2000年</span>
+                <h4>市值巅峰时期</h4>
+                <p>在互联网泡沫高峰期，雅虎市值一度超过1250亿美元。当时它是访问量最大的网站之一，提供搜索、邮箱、新闻、财经等多种服务。</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2008年</span>
+                <h4>拒绝微软收购提议</h4>
+                <p>微软曾提出以446亿美元收购雅虎，但被雅虎董事会拒绝。这一决定至今仍被广泛讨论，被视为雅虎发展史上的关键转折点之一。</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2017年</span>
+                <h4>核心业务出售给Verizon</h4>
+                <p>雅虎将核心互联网业务以44.8亿美元出售给Verizon Communications，之后与AOL合并成为Oath公司（后更名为Verizon Media）。</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">近年</span>
+                <h4>品牌延续与整合</h4>
+                <p>尽管所有权几经变更，雅虎品牌仍然存在于邮箱、新闻、财经等服务中。2021年，Apollo Global Management收购了Verizon Media的多数股权，公司更名为Yahoo!。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 核心服务 -->
+<section id="services" class="services-section">
+    <div class="container">
+        <div class="section-title">
+            <h3>雅虎的经典服务</h3>
+            <p>这些功能定义了门户网站的标准配置</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">✉️</div>
+                <h4>雅虎邮箱</h4>
+                <p>作为全球最早的大规模免费邮箱服务之一，雅虎邮箱曾拥有数亿用户。它提供了1GB免费存储空间（在当时是革命性的），支持POP3和网页访问。</p>
+                <span class="tag">经典服务</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📰</div>
+                <h4>雅虎新闻</h4>
+                <p>聚合全球各大通讯社和媒体的新闻内容，是早期网民获取时事信息的主要渠道。雅虎新闻以编辑精选和实时更新著称。</p>
+                <span class="tag">资讯聚合</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <h4>雅虎财经</h4>
+                <p>提供股票行情、财经新闻、投资组合追踪等功能。雅虎财经至今仍是许多投资者日常查看市场动态的重要平台之一。</p>
+                <span class="tag">金融数据</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h4>雅虎搜索</h4>
+                <p>在Google崛起之前，雅虎搜索曾是互联网搜索的代名词。早期采用人工编辑目录，后引入搜索引擎技术，是许多用户的上网起点。</p>
+                <span class="tag">搜索入口</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💬</div>
+                <h4>雅虎通</h4>
+                <p>即时通讯工具雅虎通（Yahoo! Messenger）是2000年代流行的聊天软件之一，支持文字、语音和视频聊天，承载了许多人的网络社交回忆。</p>
+                <span class="tag">即时通讯</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h4>雅虎目录</h4>
+                <p>作为雅虎最早的形态，人工编辑的网站目录将互联网按主题分类整理。在搜索引擎算法尚不成熟的年代，这是最可靠的网址导航方式。</p>
+                <span class="tag">开山之作</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 行业影响 -->
+<section id="impact" class="impact-section">
+    <div class="container">
+        <div class="section-title" style="color: #fff;">
+            <h3 style="color: #fff;">雅虎对互联网的深远影响</h3>
+            <p style="color: #ccc;">门户模式、免费服务与内容生态的先行者</p>
+        </div>
+        <div class="impact-grid">
+            <div class="impact-item">
+                <h4>门户网站模式的开创</h4>
+                <p>雅虎确立了"门户网站"的形态：将搜索、新闻、邮箱、购物等服务整合在一个入口页面。这种模式被全球无数网站效仿，成为Web 1.0时代的标志性产品形态。</p>
+            </div>
+            <div class="impact-item">
+                <h4>免费+广告商业模式</h4>
+                <p>雅虎率先验证了通过免费服务吸引海量用户，再通过在线广告盈利的模式。这为后来的Google、Facebook等互联网公司铺平了商业化道路。</p>
+            </div>
+            <div class="impact-item">
+                <h4>内容生态的构建</h4>
+                <p>雅虎不仅是技术平台，还建立了庞大的内容编辑团队，涵盖新闻、体育、娱乐、财经等垂直领域。这种"技术+人工编辑"的内容运营思路影响了后来的内容平台。</p>
+            </div>
+            <div class="impact-item">
+                <h4>用户习惯的培养</h4>
+                <p>对于90年代到2000年代初的网民而言，雅虎往往是他们访问的第一个网站。它教会了普通用户什么是网址、什么是网页、如何搜索信息，是名副其实的互联网启蒙者。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ 部分 -->
+<section id="faq" class="faq-section">
+    <div class="container">
+        <div class="section-title">
+            <h3>关于雅虎的常见问题</h3>
+            <p>解答大家最关心的雅虎话题</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h4>雅虎现在还提供服务吗？</h4>
+                <p>是的。雅虎品牌仍然存在，目前由Apollo Global Management旗下的Yahoo!公司运营。雅虎邮箱、新闻、财经等服务依然可用，只是规模和影响力已不如当年。</p>
+            </div>
+            <div class="faq-item">
+                <h4>雅虎为什么衰落？</h4>
+                <p>雅虎衰落的原因较为复杂，主要包括：在搜索引擎技术上未能持续投入，错失社交网络浪潮，多次重大战略决策失误（如拒绝微软收购），以及组织架构频繁调整导致方向感缺失。</p>
+            </div>
+            <div class="faq-item">
+                <h4>雅虎邮箱还能注册吗？</h4>
+                <p>目前雅虎邮箱仍然提供注册服务，用户可以通过Yahoo官网注册新的邮箱账号。不过，雅虎邮箱在中国大陆地区的访问速度和服务稳定性可能不尽如人意。</p>
+            </div>
+            <div class="faq-item">
+                <h4>雅虎和阿里巴巴有什么关系？</h4>
+                <p>雅虎曾持有阿里巴巴集团约40%的股份（后经稀释和剥离）。这部分股权曾是雅虎资产中价值最高的部分之一。2012年雅虎出售了所持阿里巴巴股份的一半左右，剩余股份在Verizon收购雅虎核心业务时被剥离，由独立的Altaba公司持有并逐步清盘。</p>
+            </div>
+            <div class="faq-item">
+                <h4>雅虎日本是雅虎旗下的吗？</h4>
+                <p>雅虎日本（Yahoo! Japan）是由软银和雅虎共同成立的合资企业，运营上相对独立。在雅虎出售核心业务后，雅虎日本依然保持独立运营，目前是日本最受欢迎的网站之一。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-links">
+            <a href="#history">历史</a>
+            <a href="#services">服务</a>
+            <a href="#impact">影响</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <p class="footer-copyright">
+            © 2024 雅虎网站 信息回顾与知识分享平台 | 本站为独立资料站，与Yahoo! Inc.无隶属关系。所有商标归各自所有者所有。
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
