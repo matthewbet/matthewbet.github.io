@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xong出没-趣味日常记录与生活分享平台</title>
+    <meta name="description" content="xong出没是一个记录生活趣事、分享日常见闻与心情点滴的温暖社区。在这里发现身边的小确幸，阅读真实有趣的生活故事，参与轻松友善的话题交流。">
+    <meta name="keywords" content="xong出没,生活记录,日常分享,趣事,心情日记,生活社区,随笔">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #faf7f2;
+            color: #3a3530;
+            line-height: 1.7;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* header */
+        .site-header {
+            background-color: #ffffff;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 14px 0;
+        }
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #e86a5e;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .logo a i {
+            font-style: normal;
+            background: #e86a5e;
+            color: #fff;
+            border-radius: 40px;
+            padding: 0 8px;
+            font-size: 1.2rem;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .main-nav ul li a {
+            font-weight: 500;
+            color: #4d463f;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .main-nav ul li a:hover {
+            border-bottom-color: #e86a5e;
+            color: #e86a5e;
+        }
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .btn-outline {
+            border: 1px solid #e2d8cf;
+            background: #fff;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: 0.2s;
+            color: #4d463f;
+        }
+        .btn-outline:hover {
+            border-color: #e86a5e;
+            color: #e86a5e;
+        }
+        .btn-solid {
+            background: #e86a5e;
+            color: #fff;
+            border: none;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .btn-solid:hover {
+            background: #d55449;
+        }
+
+        /* hero */
+        .hero {
+            background: linear-gradient(135deg, #fff8f0 0%, #fcede5 100%);
+            padding: 60px 0 50px;
+            border-bottom: 1px solid #f0e5db;
+        }
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1 1 380px;
+        }
+        .hero-text h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #2f2a26;
+            margin-bottom: 18px;
+            line-height: 1.25;
+        }
+        .hero-text h1 span {
+            color: #e86a5e;
+            position: relative;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #6b6159;
+            margin-bottom: 30px;
+            max-width: 520px;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .hero-illustration {
+            flex: 0 0 300px;
+            background: #e8ddd2;
+            border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+            width: 300px;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c4a99b;
+            font-size: 5rem;
+        }
+        .hero-illustration span {
+            transform: rotate(-8deg);
+        }
+
+        /* section common */
+        .section {
+            padding: 55px 0;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2f2a26;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+        .section-sub {
+            color: #8d8279;
+            margin-bottom: 30px;
+            font-size: 0.98rem;
+            border-left: 3px solid #e86a5e;
+            padding-left: 12px;
+        }
+
+        /* cards */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .story-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            transition: 0.25s;
+            border: 1px solid #f0ece7;
+        }
+        .story-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+        .story-card .emoji {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .story-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .story-card p {
+            color: #6d625a;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+        .story-meta {
+            font-size: 0.8rem;
+            color: #a89f97;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px dashed #eee;
+            padding-top: 12px;
+        }
+
+        /* two column */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        .topic-item {
+            background: #fff;
+            border-radius: 14px;
+            padding: 18px 20px;
+            margin-bottom: 14px;
+            border-left: 4px solid #e86a5e;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+        .topic-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+        .topic-item p {
+            color: #7a6f66;
+            font-size: 0.9rem;
+        }
+        .trending-list {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px 18px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        .trending-list h3 {
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #f0e5db;
+            padding-bottom: 12px;
+        }
+        .trending-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 0;
+            border-bottom: 1px dashed #f5efe9;
+        }
+        .trending-item:last-child {
+            border-bottom: none;
+        }
+        .trending-num {
+            background: #f5ede7;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #9a7c6c;
+        }
+        .trending-item:nth-child(2) .trending-num {
+            background: #fde8e2;
+            color: #e86a5e;
+        }
+        .trending-item a {
+            font-weight: 500;
+            flex: 1;
+        }
+        .trending-item a:hover {
+            color: #e86a5e;
+        }
+
+        /* 心情墙 */
+        .mood-wall {
+            background: #fff5f0;
+            border-radius: 24px;
+            padding: 40px 30px;
+            margin-top: 20px;
+        }
+        .mood-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 16px;
+        }
+        .mood-box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 16px 10px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            transition: 0.2s;
+        }
+        .mood-box:hover {
+            transform: scale(1.03);
+        }
+        .mood-box .mood-emoji {
+            font-size: 2.4rem;
+            margin-bottom: 8px;
+        }
+        .mood-box p {
+            font-size: 0.9rem;
+            color: #6d625a;
+        }
+
+        /* 关于 */
+        .about-block {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px 28px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            margin-top: 20px;
+        }
+        .about-block p {
+            margin-bottom: 12px;
+            color: #584e47;
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 860px;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+        .faq-item summary {
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #3a3530;
+            outline: none;
+        }
+        .faq-item p {
+            margin-top: 10px;
+            color: #6b6159;
+            padding-left: 6px;
+        }
+
+        /* footer */
+        .site-footer {
+            background: #2f2a26;
+            color: #c9bdb4;
+            padding: 40px 0 30px;
+            margin-top: 30px;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-about {
+            flex: 1 1 260px;
+        }
+        .footer-about p {
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .footer-links h4 {
+            color: #fff;
+            margin-bottom: 14px;
+            font-size: 1rem;
+        }
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        .footer-links li a {
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+        .footer-links li a:hover {
+            color: #e86a5e;
+        }
+        .copyright {
+            border-top: 1px solid #4a413c;
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #9e948b;
+        }
+
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .split-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text p {
+                margin: 0 auto 30px;
+            }
+            .hero-illustration {
+                width: 200px;
+                height: 180px;
+                font-size: 4rem;
+            }
+        }
+        @media (max-width: 640px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .main-nav ul {
+                justify-content: center;
+                gap: 16px;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .section {
+                padding: 35px 0;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .grid-cards {
+                grid-template-columns: 1fr;
+            }
+            .footer-inner {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="#"><i>x</i> xong出没</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#stories">日常故事</a></li>
+                    <li><a href="#topics">热门话题</a></li>
+                    <li><a href="#mood">心情墙</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="btn-outline">登录</a>
+                <a href="#" class="btn-solid">写记录</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- hero -->
+        <section class="hero" id="home">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>捕捉生活里 <span>xong出没</span> 的瞬间</h1>
+                    <p>这里收集平凡日子里闪闪发光的小事——一次偶遇、一句对话、一个想法。每个人都是生活的记录者，欢迎分享你的“出没”时刻。</p>
+                    <div class="hero-actions">
+                        <a href="#stories" class="btn-solid">浏览故事</a>
+                        <a href="#mood" class="btn-outline">去看看心情</a>
+                    </div>
+                </div>
+                <div class="hero-illustration">
+                    <span>☁️✨</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 日常故事 -->
+        <section class="section" id="stories">
+            <div class="container">
+                <h2 class="section-title">最近出没的日常</h2>
+                <p class="section-sub">来自朋友们的真实生活片段，也许你也有类似的经历</p>
+                <div class="grid-cards">
+                    <article class="story-card">
+                        <div class="emoji">🚶</div>
+                        <h3>傍晚散步遇见的猫</h3>
+                        <p>小区拐角那只橘猫今天居然主动蹭了我，看来混脸熟终于有回报了。它脖子上没有项圈，但毛色很干净，应该是附近住户散养的。</p>
+                        <div class="story-meta">
+                            <span>@阿布</span>
+                            <span>12分钟前</span>
+                        </div>
+                    </article>
+                    <article class="story-card">
+                        <div class="emoji">☕</div>
+                        <h3>咖啡店的小纸条</h3>
+                        <p>在常去的咖啡馆座位上发现一张手写纸条：“今天也要加油哦”。不知道是谁留下的，但看到的一瞬间心情变好了，把它压在了杯垫下。</p>
+                        <div class="story-meta">
+                            <span>@Momo</span>
+                            <span>1小时前</span>
+                        </div>
+                    </article>
+                    <article class="story-card">
+                        <div class="emoji">📦</div>
+                        <h3>快递小哥的暖心提醒</h3>
+                        <p>快递小哥打电话说：“你的包裹到了，不急的话我放门口快递柜，记得早点拿。”这种小提醒总让人觉得被照顾到了。</p>
+                        <div class="story-meta">
+                            <span>@小满</span>
+                            <span>3小时前</span>
+                        </div>
+                    </article>
+                    <article class="story-card">
+                        <div class="emoji">🌧️</div>
+                        <h3>下雨天的一把伞</h3>
+                        <p>下班突然下雨，没带伞。站在便利店门口犹豫时，旁边的女生递来一把伞：“你先拿去用吧，我同事来接我。”素不相识的善意特别动人。</p>
+                        <div class="story-meta">
+                            <span>@青禾</span>
+                            <span>昨天</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 话题和趋势 -->
+        <section class="section" id="topics" style="padding-top:0;">
+            <div class="container split-layout">
+                <div>
+                    <h2 class="section-title">正在发生的话题</h2>
+                    <p class="section-sub">最近大家正在讨论这些有趣的生活议题</p>
+                    <div class="topic-item">
+                        <h3># 你记忆里的夏天声音</h3>
+                        <p>蝉鸣、风扇转页声、西瓜切开的声音……哪些声音能瞬间把你拉回某个夏天？</p>
+                    </div>
+                    <div class="topic-item">
+                        <h3># 通勤路上的观察日记</h3>
+                        <p>地铁里看书的人、公交站等车的老人、每天同路的骑行者——你注意过这些细节吗？</p>
+                    </div>
+                    <div class="topic-item">
+                        <h3># 那些被陌生人治愈的瞬间</h3>
+                        <p>电梯里帮你按住开门键的手、指路时多走两步的身影……收集这些温暖的碎片。</p>
+                    </div>
+                    <div class="topic-item">
+                        <h3># 一个人的周末怎么过</h3>
+                        <p>睡懒觉、做一顿复杂的饭、看一部老电影，还是出门闲逛？分享你的独处清单。</p>
+                    </div>
+                </div>
+                <aside>
+                    <div class="trending-list">
+                        <h3>📈 本周热门记录</h3>
+                        <div class="trending-item">
+                            <span class="trending-num">1</span>
+                            <a href="#">楼下面馆老板记得每个常客的口味</a>
+                        </div>
+                        <div class="trending-item">
+                            <span class="trending-num">2</span>
+                            <a href="#">第一次尝试做酸菜鱼居然成功了</a>
+                        </div>
+                        <div class="trending-item">
+                            <span class="trending-num">3</span>
+                            <a href="#">在旧书店淘到十年前的杂志</a>
+                        </div>
+                        <div class="trending-item">
+                            <span class="trending-num">4</span>
+                            <a href="#">阳台种的薄荷长势喜人</a>
+                        </div>
+                        <div class="trending-item">
+                            <span class="trending-num">5</span>
+                            <a href="#">早高峰地铁居然有空座</a>
+                        </div>
+                        <div class="trending-item">
+                            <span class="trending-num">6</span>
+                            <a href="#">自己修好了小台灯，成就感满满</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- 心情墙 -->
+        <section class="section" id="mood">
+            <div class="container">
+                <div class="mood-wall">
+                    <h2 class="section-title" style="color:#2f2a26;">此刻心情 · 出没坐标</h2>
+                    <p class="section-sub">你在哪里？此刻心情如何？用一个小表情记录吧</p>
+                    <div class="mood-grid">
+                        <div class="mood-box">
+                            <div class="mood-emoji">😊</div>
+                            <p>开心出没</p>
+                        </div>
+                        <div class="mood-box">
+                            <div class="mood-emoji">😌</div>
+                            <p>放松时刻</p>
+                        </div>
+                        <div class="mood-box">
+                            <div class="mood-emoji">🤔</div>
+                            <p>思考人生</p>
+                        </div>
+                        <div class="mood-box">
+                            <div class="mood-emoji">🥱</div>
+                            <p>困倦但坚持</p>
+                        </div>
+                        <div class="mood-box">
+                            <div class="mood-emoji">😋</div>
+                            <p>吃到好吃的</p>
+                        </div>
+                        <div class="mood-box">
+                            <div class="mood-emoji">🌿</div>
+                            <p>自然治愈</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于xong出没 -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="about-block">
+                    <h2 class="section-title">xong出没是什么？</h2>
+                    <p>“xong出没”最初只是朋友之间互相问候的一句俏皮话——“今天在哪里出没？”后来慢慢变成了记录生活碎片的小习惯。这里没有宏大叙事，只有具体的、真实的、带着体温的日常。</p>
+                    <p>我们相信，生活的质感藏在那些不经意的瞬间里：楼下早餐摊的热气、傍晚天空的颜色、手机里随手拍下的云。把这些片段留下来，日子就有了可以回看的坐标。</p>
+                    <p>如果你也喜欢记录，或者只是喜欢看别人分享的琐碎美好，欢迎在这里停留片刻。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container">
+                <h2 class="section-title">关于使用的常见问题</h2>
+                <p class="section-sub">如果你第一次来，也许会有这些疑问</p>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>“xong出没”这个名字怎么读？</summary>
+                        <p>“xong”没有固定的标准读音，大家通常念做“松”或“熊”的谐音，也可以按自己喜欢的来。它更接近一种语气词，带着一点俏皮和神秘感。</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>我可以在这里发布自己的日常吗？</summary>
+                        <p>当然可以。页面右上角点击“写记录”即可开始分享你的文字或图片。记得保持友善真诚，不发布虚假信息或他人隐私即可。</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>如何找到我之前看过的某篇故事？</summary>
+                        <p>目前可以通过话题标签或热门列表查找。如果记得大概内容，也可以使用页面顶部的搜索功能（即将上线）进行检索。</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>这里的内容都是原创的吗？</summary>
+                        <p>所有发布的日常记录均来自用户本人经历或授权内容。我们尊重原创，也鼓励大家分享自己真实的生活片段。</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-about">
+                    <h3 style="color:#fff;font-size:1.3rem;">xong出没</h3>
+                    <p>记录真实生活，分享细微感动。愿每一份日常都被温柔看见。</p>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4>浏览</h4>
+                        <ul>
+                            <li><a href="#stories">日常故事</a></li>
+                            <li><a href="#topics">热门话题</a></li>
+                            <li><a href="#mood">心情墙</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>参与</h4>
+                        <ul>
+                            <li><a href="#">写记录</a></li>
+                            <li><a href="#">加入讨论</a></li>
+                            <li><a href="#">投稿指南</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>关于</h4>
+                        <ul>
+                            <li><a href="#about">关于我们</a></li>
+                            <li><a href="#faq">常见问题</a></li>
+                            <li><a href="#">联系邮箱</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 xiongchumo · 保留所有权利 · 用心记录生活</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
